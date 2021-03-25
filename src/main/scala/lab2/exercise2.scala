@@ -19,28 +19,28 @@ class exercise2 extends Module {
     })
 
     val mux4_1a = MuxLookup(io.sel(1), false.B, Array(
-        (0.U) -> MuxLookup(io.sel(2),false.B, Array(
+        (0.U) -> MuxLookup(io.sel(0),false.B, Array(
             (0.U) -> io.in0,
             (1.U) -> io.in1
         )),
-        (1.U) -> MuxLookup(io.sel(2), false.B, Array(
+        (1.U) -> MuxLookup(io.sel(0), false.B, Array(
             (0.U) -> io.in2,
             (1.U) -> io.in3
         ))
     ))
 
     val mux4_1b = MuxLookup(io.sel(1), false.B, Array(
-        (0.U) -> MuxLookup(io.sel(2), false.B, Array(
+        (0.U) -> MuxLookup(io.sel(0), false.B, Array(
             (0.U) -> io.in4,
             (1.U) -> io.in5
         )),
-        (1.U) -> MuxLookup(io.sel(2), false.B, Array(
+        (1.U) -> MuxLookup(io.sel(0), false.B, Array(
             (0.U) -> io.in6,
             (1.U) -> io.in7
         ))
     ))
 
-    io.out := MuxLookup(io.sel(0), false.B, Array(
+    io.out := MuxLookup(io.sel(2), false.B, Array(
         (0.U) -> mux4_1a,
         (1.U) -> mux4_1b
     ))
