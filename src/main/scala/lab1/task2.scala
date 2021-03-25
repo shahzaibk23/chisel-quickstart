@@ -16,7 +16,7 @@ class counter_up_down(n:Int) extends Module {
 
     val reverse = RegInit(0.B)
 
-    when(reverse === 1.B){
+    when(reverse === 1.B && counter === 0.U){
         io.out := 1.B
     }.otherwise{
         io.out := 0.B
@@ -25,12 +25,15 @@ class counter_up_down(n:Int) extends Module {
     def countUpper(max:UInt)={
         // io.out := 0.B
         when(counter === max){
+            when(io.reload === true.B){
                 reverse := true.B
+            }
+                // reverse := true.B
                 io.out := 1.B
                 counter := counter - 1.U
                 // countLower
         }.otherwise{
-            when(io.out === 1.B){
+            when(reverse === 1.B){
                 counter := counter - 1.U
             }.otherwise{
                 counter := counter + 1.U
