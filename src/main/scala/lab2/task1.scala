@@ -13,7 +13,7 @@ class LM_IO_Interfaces extends Bundle {
 class Mux5_1 extends Module {
     val io = IO(new LM_IO_Interfaces)
 
-    val sel = Cat(io.s0,io.s1,io.s2).asInstanceOf[UInt]
+    val sel = Cat(io.s2,io.s1,io.s0).asInstanceOf[UInt]
 
     // io.out := MuxLookup(sel, 0.U, Array(
     //     ("b000".U) -> 0.U,

@@ -4,7 +4,7 @@ import chisel3._
 
 class Counter5(size: Int, maxValue:Int) extends Module {
     val io = IO(new Bundle{
-        val in = Input(Bool())
+        // val in = Input(Bool())
         val result = Output(Bool())
     })
 
@@ -19,6 +19,6 @@ class Counter5(size: Int, maxValue:Int) extends Module {
         count
     }
 
-    val counter1 = genCounter(size,maxValue.asInstanceOf[UInt])
+    val counter1 = genCounter(size,maxValue.asUInt)
     io.result := counter1(size-1)
 }

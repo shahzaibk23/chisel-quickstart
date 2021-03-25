@@ -9,9 +9,9 @@ class exercise1Test extends FreeSpec with ChiselScalatestTester {
         test(new exercise1){ c =>
             c.io.inA.poke(12.U)
             c.io.inB.poke(13.U)
-            c.io.sel.poke(0.U)
+            c.io.sel.poke(1.U)
             c.clock.step(1)
-            c.io.out.expect(13.U)
+            c.io.out.expect(12.U)
         }
     }
 }

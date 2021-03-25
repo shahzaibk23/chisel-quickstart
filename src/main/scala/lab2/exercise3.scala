@@ -12,4 +12,5 @@ class exercise3 extends Module {
 
     io.out := Mux1H(io.in, Seq(0.U, 1.U, 2.U, 3.U))
 
+    
 }

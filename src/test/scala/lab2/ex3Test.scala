@@ -7,8 +7,9 @@ import chisel3._
 class ex3Test extends FreeSpec with ChiselScalatestTester {
     "Exercise 3 Test" in {
         test(new exercise3){ c =>
-            c.io.in.poke("b1000".U)
-            c.io.out.expect(3.U)
+            c.io.in.poke(4.U)
+            // c.clock.step(20)
+            c.io.out.expect(2.U)
         }
     }
 }
