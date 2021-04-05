@@ -24,7 +24,7 @@ class ImmGenTest extends FreeSpec with ChiselScalatestTester {
                 val inst = instArray(index).U
 
                 val result = index match {
-                    case 0 => 4
+                    case 0 => 4 
                     case 1 => 0
                     case 2 => 2097152
                     case 3 => 8
