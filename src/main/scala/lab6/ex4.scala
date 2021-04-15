@@ -18,7 +18,7 @@ class ex4 extends Module {
     when(queue2.valid && io.out.ready){
         // io.out.bits := queue2.deq().bits
         // io.out.valid := queue2.deq().valid
-        io.out.enq(queue2.deq())
+        io.out.enq(queue2.deq()) // Decouple has pre-made queue
     }.otherwise{
         io.out.bits := 0.U
         io.out.valid := 0.B

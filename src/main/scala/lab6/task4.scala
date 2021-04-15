@@ -20,7 +20,7 @@ class up_down_counter(val max:Int = 10) extends Module {
     //     val counter = RegInit(max.U(log2Ceil(max).W))
     // }
 
-    val counter = RegInit(0.U)
+    val counter = RegInit(0.U(log2Ceil(max).W))
 
 
     when(io.up_down === 1.B && counter =/= max.U){

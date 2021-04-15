@@ -11,6 +11,8 @@ class task4Test extends FreeSpec with ChiselScalatestTester {
         test(new up_down_counter).withAnnotations(Seq(VerilatorBackendAnnotation)){ c =>
             c.io.up_down.poke(1.B)
             c.clock.step(20)
+            c.io.up_down.poke(0.B)
+            c.clock.step(20)
         }
     }
 }

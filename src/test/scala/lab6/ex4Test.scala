@@ -12,6 +12,8 @@ class ex4Test extends FreeSpec with ChiselScalatestTester {
             c.io.in.valid.poke(1.B)
             c.io.in.bits.poke(4.U)
             c.clock.step(20)
+            c.io.out.ready.poke(1.B)
+            c.io.out.bits.expect(4.U)
         }
     }
 }
